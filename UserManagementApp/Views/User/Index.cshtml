@@ -1,0 +1,21 @@
+﻿@model List<UserManagementApp.Entities.User>
+
+<h2>Kullanıcı Listesi</h2>
+<a href="/User/Create">Yeni Kullanıcı Ekle</a>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.FirstName</td>
+            <td>@user.LastName</td>
+            <td>@user.Email</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <None Remove="Helpers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UserManagementApp.DataAccess\UserManagementApp.DataAccess.csproj" />
+    <ProjectReference Include="..\UserManagementApp.Entities\UserManagementApp.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+﻿@model UserManagementApp.Entities.User
+
+<h2>Yeni Kullanıcı Ekle</h2>
+
+<form method="post">
+    <label>Ad:</label>
+    <input type="text" name="FirstName" required />
+    <br />
+
+    <label>Soyad:</label>
+    <input type="text" name="LastName" required />
+    <br />
+
+    <label>Email:</label>
+    <input type="email" name="Email" required />
+    <br />
+
+    <label>Şifre:</label>
+    <input type="password" name="Password" required />
+    <br />
+
+    <button type="submit">Kaydet</button>
+</form>
