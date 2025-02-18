@@ -8,7 +8,7 @@ namespace UserManagementApp.Entities.DTO
 {
     public class LoginRequest
     {
-        public string email { get; set; }
-        public string password { get; set; }
+        public string email { get; set; } = string.Empty;
+        public string password { get; set; } = string.Empty;
     }
 }

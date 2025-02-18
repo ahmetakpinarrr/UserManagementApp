@@ -16,10 +16,10 @@ public class EfUserDal : IUserDal
         return _context.Users.ToList();
     }
 
-    public User GetById(int id)
-    {
-        return _context.Users.FirstOrDefault(u => u.Id == id);
-    }
+    //public User GetById(int id)
+    //{
+    //    return _context.Users.FirstOrDefault(u => u.Id == id);
+    //}
 
     public void Add(User user)
     {
@@ -33,20 +33,39 @@ public class EfUserDal : IUserDal
         _context.SaveChanges();
     }
 
+    //public void Delete(int id)
+    //{
+    //    var user = GetById(id);
+    //    if (user != null)
+    //    {
+    //        _context.Users.Remove(user);
+    //        _context.SaveChanges();
+    //    }
+    //}
+
     public void Delete(int id)
     {
         var user = GetById(id);
-        if (user != null)
+        if (user is not null)  // Alternatif: if (user != null)
         {
             _context.Users.Remove(user);
             _context.SaveChanges();
         }
     }
 
-   
 
-    public User GetByEmail(string email)
+    //public User GetByEmail(string email)
+    //{
+    //    return _context.Users.FirstOrDefault(u => u.Email == email);
+    //}
+    public User? GetById(int id)  // Nullable olarak dönüş yap
+    {
+        return _context.Users.FirstOrDefault(u => u.Id == id);
+    }
+
+    public User? GetByEmail(string email)  // Nullable olarak dönüş yap
     {
         return _context.Users.FirstOrDefault(u => u.Email == email);
     }
+
 }
